@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Consolidada: Compras de Azufre 2024-2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        /* Paleta de colores */
+        :root {
+            --light-lime: #d9ed92;
+            --lime-green: #b5e48c;
+            --green: #99d98c;
+            --medium-green: #76c893;
+            --teal-green: #52b69a;
+            --teal-blue: #34a0a4;
+            --medium-blue: #168aad;
+            --blue: #1a759f;
+            --dark-blue: #1e6091;
+            --very-dark-blue: #184e77;
+            --light-gray: #f3f4f6;
+            --medium-gray: #e5e7eb;
+            --dark-gray: #d1d5db;
+        }
+
+        /* Animaciones y Estilos de UI */
+        .chart-bar-stack, .price-line-chart-point, .pie-chart:before, .metric-card-interactive, .conclusion-item, .pie-chart-card, .pie-chart-card .pie-card-title {
+            transition: all 0.3s ease-in-out;
+        }
+        .chart-item:hover .chart-bar-stack { filter: brightness(1.1); }
+        .price-line-chart-point:hover { r: 8; filter: brightness(1.2); }
+        .price-line-chart-point { cursor: pointer; }
+
+        .pie-chart {
+            width: 150px; height: 150px; position: relative; display: inline-grid;
+            place-content: center; font-size: 1.25rem; font-weight: bold;
+        }
+        .pie-chart:before {
+            content: ""; position: absolute; border-radius: 50%; inset: 0;
+            background: conic-gradient(var(--c1) calc(var(--p) * 1%), var(--c2) 0);
+        }
+        
+        #chart-tooltip {
+            position: absolute; background-color: rgba(24, 78, 119, 0.95); color: white;
+            padding: 0.75rem 1rem; border-radius: 0.5rem; font-size: 0.875rem;
+            pointer-events: none; opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translate(-50%, -125%); white-space: nowrap; z-index: 50;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .highlight-stat { color: var(--light-lime); font-weight: 700; }
+
+        .metric-card-interactive {
+            background-color: var(--medium-gray);
+        }
+        .metric-card-interactive:hover {
+            transform: scale(1.06);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.15);
+            background-color: var(--light-lime);
+        }
+        .metric-card-interactive:hover .metric-number,
+        .metric-card-interactive:hover .metric-unit {
+             color: var(--very-dark-blue);
+        }
+         .metric-card-interactive:hover .metric-label {
+             color: var(--dark-blue);
+        }
+        
+        .conclusion-item:hover {
+            background-color: var(--blue); transform: translateY(-5px);
+        }
+
+        .pie-chart-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Tooltip para los gráficos -->
+    <div id="chart-tooltip"></div>
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- Encabezado -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold" style="color: var(--very-dark-blue);">Análisis Comparativo de Compras de Azufre</h1>
+            <p class="text-lg md:text-xl mt-2" style="color: var(--blue);">Periodo: Enero 2024 - Agosto 2025</p>
+        </header>
+
+        <!-- Métricas Clave 2024 -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--blue);">Métricas Clave 2024</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="p-6 rounded-xl shadow-lg border border-gray-200 metric-card-interactive">
+                    <div class="flex justify-center items-center mx-auto rounded-full w-16 h-16 mb-4" style="background-color: var(--light-lime);"><svg class="w-8 h-8" style="color: var(--teal-green);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg></div>
+                    <h3 class="text-4xl font-bold metric-number" style="color: var(--dark-blue);">26,014 <span class="text-2xl font-semibold text-gray-500 metric-unit">Ton</span></h3><p class="text-gray-600 mt-2 font-semibold metric-label">Total Comprado</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-lg border border-gray-200 metric-card-interactive">
+                    <div class="flex justify-center items-center mx-auto rounded-full w-16 h-16 mb-4" style="background-color: var(--lime-green);"><svg class="w-8 h-8" style="color: var(--dark-blue);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18M-4.5 12h22.5" /></svg></div>
+                    <h3 class="text-4xl font-bold metric-number" style="color: var(--dark-blue);">2,168 <span class="text-2xl font-semibold text-gray-500 metric-unit">Ton/Mes</span></h3><p class="text-gray-600 mt-2 font-semibold metric-label">Promedio Mensual</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-lg border border-gray-200 metric-card-interactive">
+                    <div class="flex justify-center items-center mx-auto rounded-full w-16 h-16 mb-4" style="background-color: var(--green);"><svg class="w-8 h-8" style="color: var(--teal-blue);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75-.75v-.75M3.75 17.25v.75a.75.75 0 00.75.75h.75" /></svg></div>
+                    <h3 class="text-4xl font-bold metric-number" style="color: var(--dark-blue);">$492 <span class="text-2xl font-semibold text-gray-500 metric-unit">COP/KG</span></h3><p class="text-gray-600 mt-2 font-semibold metric-label">Precio Ponderado Contrato</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-lg border border-gray-200 metric-card-interactive">
+                    <div class="flex justify-center items-center mx-auto rounded-full w-16 h-16 mb-4" style="background-color: var(--medium-green);"><svg class="w-8 h-8" style="color: var(--very-dark-blue);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                    <h3 class="text-4xl font-bold metric-number" style="color: var(--dark-blue);">$223 <span class="text-2xl font-semibold text-gray-500 metric-unit">COP/KG</span></h3><p class="text-gray-600 mt-2 font-semibold metric-label">Precio Ponderado Exportación</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Métricas Clave 2025 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--blue);">Métricas Clave 2025 (YTD)</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                 <div class="p-6 rounded-xl shadow-lg border border-gray-200 metric-card-interactive">
+                    <div class="flex justify-center items-center mx-auto rounded-full w-16 h-16 mb-4" style="background-color: var(--light-lime);"><svg class="w-8 h-8" style="color: var(--teal-green);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg></div>
+                    <h3 class="text-4xl font-bold metric-number" style="color: var(--dark-blue);">18,614 <span class="text-2xl font-semibold text-gray-500 metric-unit">Ton</span></h3><p class="text-gray-600 mt-2 font-semibold metric-label">Total Comprado</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-lg border border-gray-200 metric-card-interactive">
+                    <div class="flex justify-center items-center mx-auto rounded-full w-16 h-16 mb-4" style="background-color: var(--lime-green);"><svg class="w-8 h-8" style="color: var(--dark-blue);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18M-4.5 12h22.5" /></svg></div>
+                    <h3 class="text-4xl font-bold metric-number" style="color: var(--dark-blue);">2,327 <span class="text-2xl font-semibold text-gray-500 metric-unit">Ton/Mes</span></h3><p class="text-gray-600 mt-2 font-semibold metric-label">Promedio Mensual</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-lg border border-gray-200 metric-card-interactive">
+                    <div class="flex justify-center items-center mx-auto rounded-full w-16 h-16 mb-4" style="background-color: var(--green);"><svg class="w-8 h-8" style="color: var(--teal-blue);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75-.75v-.75M3.75 17.25v.75a.75.75 0 00.75.75h.75" /></svg></div>
+                    <h3 class="text-4xl font-bold metric-number" style="color: var(--dark-blue);">$952 <span class="text-2xl font-semibold text-gray-500 metric-unit">COP/KG</span></h3><p class="text-gray-600 mt-2 font-semibold metric-label">Precio Ponderado Contrato</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-lg border border-gray-200 metric-card-interactive">
+                    <div class="flex justify-center items-center mx-auto rounded-full w-16 h-16 mb-4" style="background-color: var(--medium-green);"><svg class="w-8 h-8" style="color: var(--very-dark-blue);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                    <h3 class="text-4xl font-bold metric-number" style="color: var(--dark-blue);">$412 <span class="text-2xl font-semibold text-gray-500 metric-unit">COP/KG</span></h3><p class="text-gray-600 mt-2 font-semibold metric-label">Precio Ponderado Exportación</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gráfico 1: Volumen de Compra Mensual -->
+        <section class="mb-16 bg-gray-100 p-6 rounded-xl shadow-lg border border-gray-200 overflow-x-auto">
+            <h2 class="text-3xl font-bold text-center mb-2" style="color: var(--blue);">Volumen de Compra Mensual (2024-2025)</h2>
+            <p class="text-center text-gray-600 mb-8">Desglose de toneladas por tipo de compra</p>
+            <div id="volume-chart-container" class="w-full relative pt-4 pb-2" style="min-width: 800px;">
+                <div class="h-64 relative">
+                    <!-- Eje Y -->
+                    <div class="absolute top-0 left-0 h-full flex flex-col justify-between text-sm text-gray-500 -ml-3">
+                        <span class="absolute top-0 transform -translate-y-1/2">4000</span>
+                        <span class="absolute" style="top: 25%; transform: translateY(-50%);">3000</span>
+                        <span class="absolute top-1/2 transform -translate-y-1/2">2000</span>
+                        <span class="absolute" style="top: 75%; transform: translateY(-50%);">1000</span>
+                        <span class="absolute bottom-0 transform translate-y-1/2">0</span>
+                    </div>
+                    <!-- Área del gráfico -->
+                    <div class="h-full border-b-2 border-l-2 border-r-2 border-gray-300 ml-8 relative">
+                        <!-- Fondos de año -->
+                        <div class="absolute top-0 left-0 h-full w-full flex z-0">
+                            <div class="h-full" style="width: 60%; background-color: var(--light-gray);"></div> <!-- 12/20 meses -->
+                            <div class="h-full relative" style="width: 40%; background-color: var(--medium-gray);"> <!-- 8/20 meses -->
+                                <svg class="w-full h-full absolute top-0 left-0" preserveAspectRatio="none">
+                                    <defs>
+                                        <pattern id="hatch-pattern" patternUnits="userSpaceOnUse" width="6" height="6">
+                                            <path d="M-1,1 l2,-2 M0,6 l6,-6 M5,7 l2,-2" style="stroke:rgba(107, 114, 128, 0.3); stroke-width:1.5"></path>
+                                        </pattern>
+                                    </defs>
+                                    <rect x="0" y="0" width="100%" height="100%" fill="url(#hatch-pattern)"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- Contenedor de las barras -->
+                        <div id="volume-bars-container" class="relative z-10 h-full flex justify-around items-end">
+                           <!-- Las barras se generarán con JS -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Franjas de año -->
+                <div class="w-full flex ml-8 mt-1">
+                    <div class="text-center font-bold text-base py-1 rounded-l-md" style="width: 60%; background-color: var(--medium-gray); color: #4b5563;">2024</div>
+                    <div class="text-center font-bold text-base py-1 rounded-r-md relative" style="width: 40%; background-color: var(--dark-gray); color: #4b5563;">
+                        <svg class="w-full h-full absolute top-0 left-0" preserveAspectRatio="none">
+                            <rect x="0" y="0" width="100%" height="100%" fill="url(#hatch-pattern)"></rect>
+                        </svg>
+                        <span class="relative z-10">2025</span>
+                    </div>
+                </div>
+            </div>
+             <div class="flex justify-center flex-wrap mt-6 space-x-4">
+                <div class="flex items-center"><div class="w-4 h-4 rounded-sm mr-2" style="background-color: var(--teal-green);"></div><span class="text-sm text-gray-600">Contrato Barranca</span></div>
+                <div class="flex items-center"><div class="w-4 h-4 rounded-sm mr-2" style="background-color: var(--green);"></div><span class="text-sm text-gray-600">Contrato Reficar</span></div>
+                <div class="flex items-center"><div class="w-4 h-4 rounded-sm mr-2" style="background-color: var(--light-lime);"></div><span class="text-sm text-gray-600">Exportación</span></div>
+            </div>
+        </section>
+
+        <!-- Gráfico 2: Evolución de Precios por Tipo -->
+        <section class="mb-16 bg-gray-100 p-6 rounded-xl shadow-lg border border-gray-200 overflow-x-auto">
+            <h2 class="text-3xl font-bold text-center mb-2" style="color: var(--blue);">Evolución de Precios por Tipo (2024-2025)</h2>
+            <p class="text-center text-gray-600 mb-8">Comparativo de precios (COP/KG) para Contrato y Exportación</p>
+            <div id="price-chart-container" class="w-full relative pt-4 pb-2" style="min-width: 800px;">
+                <div class="h-72 relative">
+                    <!-- Eje Y -->
+                    <div class="absolute top-0 left-0 h-full flex flex-col justify-between text-sm text-gray-500 -ml-3">
+                        <span class="absolute top-0 transform -translate-y-1/2">$1200</span>
+                        <span class="absolute" style="top: 25%; transform: -translate-y-1/2;">$900</span>
+                        <span class="absolute top-1/2 transform -translate-y-1/2">$600</span>
+                        <span class="absolute" style="top: 75%; transform: -translate-y-1/2;">$300</span>
+                        <span class="absolute bottom-0 transform translate-y-1/2">$0</span>
+                    </div>
+                    <!-- Área del gráfico -->
+                    <div class="h-full border-b-2 border-l-2 border-r-2 border-gray-300 ml-8 relative">
+                        <!-- Fondos de año -->
+                        <div class="absolute top-0 left-0 h-full w-full flex z-0">
+                            <div class="h-full" style="width: 60%; background-color: var(--light-gray);"></div>
+                            <div class="h-full relative" style="width: 40%; background-color: var(--medium-gray);">
+                                <svg class="w-full h-full absolute top-0 left-0" preserveAspectRatio="none">
+                                    <rect x="0" y="0" width="100%" height="100%" fill="url(#hatch-pattern)"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                        <svg id="price-chart-svg" class="w-full h-full absolute top-0 left-0 z-10" preserveAspectRatio="none">
+                            <g id="price-chart-content"></g>
+                        </svg>
+                    </div>
+                </div>
+                <!-- Franjas de año y etiquetas del eje X -->
+                <div class="w-full flex ml-8 mt-1">
+                     <div class="text-center font-bold text-base py-1 rounded-l-md" style="width: 60%; background-color: var(--medium-gray); color: #4b5563;">2024</div>
+                    <div class="text-center font-bold text-base py-1 rounded-r-md relative" style="width: 40%; background-color: var(--dark-gray); color: #4b5563;">
+                        <svg class="w-full h-full absolute top-0 left-0" preserveAspectRatio="none">
+                            <rect x="0" y="0" width="100%" height="100%" fill="url(#hatch-pattern)"></rect>
+                        </svg>
+                        <span class="relative z-10">2025</span>
+                    </div>
+                </div>
+                 <div id="price-chart-labels" class="w-full flex justify-around items-end ml-8 mt-2">
+                    <!-- Las etiquetas se generarán con JS -->
+                </div>
+            </div>
+            <div class="flex justify-center flex-wrap mt-6 space-x-4">
+                <div class="flex items-center"><div class="w-4 h-4 rounded-sm mr-2" style="background-color: var(--dark-blue);"></div><span class="text-sm text-gray-600">Precio Contrato</span></div>
+                <div class="flex items-center"><div class="w-4 h-4 rounded-sm mr-2" style="background-color: var(--medium-green);"></div><span class="text-sm text-gray-600">Precio Exportación</span></div>
+                <div class="flex items-center"><div class="w-4 h-4 rounded-sm mr-2 border-2 border-dashed" style="border-color: var(--teal-blue);"></div><span class="text-sm text-gray-600 ml-2">Precio Ponderado Compra</span></div>
+            </div>
+        </section>
+
+        <!-- Distribución por Año -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--blue);">Análisis de Distribución por Año</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Columna 2024 -->
+                <div class="bg-gray-100 p-6 rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold text-center mb-6" style="color: var(--dark-blue);">Distribución 2024</h3>
+                    <div class="space-y-8">
+                        <div class="text-center pie-chart-card p-4 rounded-lg bg-gray-200">
+                            <h4 class="text-xl font-semibold mb-4 pie-card-title">Por Planta de Origen</h4>
+                            <div class="flex justify-center items-center gap-6">
+                                <div class="pie-chart" style="--p:68.6; --c1: var(--teal-green); --c2: var(--lime-green);"></div>
+                                <div class="text-left">
+                                    <div class="flex items-center mb-2"><span class="w-4 h-4 rounded-sm mr-3" style="background-color: var(--teal-green);"></span><div><p class="font-bold">Barranca</p><p class="text-sm text-gray-600">68.6% (17,855 Ton)</p></div></div>
+                                    <div class="flex items-center"><span class="w-4 h-4 rounded-sm mr-3" style="background-color: var(--lime-green);"></span><div><p class="font-bold">Reficar</p><p class="text-sm text-gray-600">31.4% (8,159 Ton)</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center pie-chart-card p-4 rounded-lg bg-gray-200">
+                            <h4 class="text-xl font-semibold mb-4 pie-card-title">Por Tipo de Precio</h4>
+                            <div class="flex justify-center items-center gap-6">
+                                <div class="pie-chart" style="--p:89.7; --c1: var(--medium-blue); --c2: var(--light-lime);"></div>
+                                <div class="text-left">
+                                    <div class="flex items-center mb-2"><span class="w-4 h-4 rounded-sm mr-3" style="background-color: var(--medium-blue);"></span><div><p class="font-bold">Contrato</p><p class="text-sm text-gray-600">89.7% (23,327 Ton)</p></div></div>
+                                    <div class="flex items-center"><span class="w-4 h-4 rounded-sm mr-3" style="background-color: var(--light-lime);"></span><div><p class="font-bold">Exportación</p><p class="text-sm text-gray-600">10.3% (2,687 Ton)</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Columna 2025 -->
+                <div class="bg-gray-200 p-6 rounded-xl shadow-lg border border-gray-300 relative">
+                    <svg class="w-full h-full absolute top-0 left-0" preserveAspectRatio="none">
+                        <rect x="0" y="0" width="100%" height="100%" fill="url(#hatch-pattern)" opacity="0.5"></rect>
+                    </svg>
+                    <div class="relative">
+                        <h3 class="text-2xl font-bold text-center mb-6" style="color: var(--dark-blue);">Distribución 2025 (YTD)</h3>
+                        <div class="space-y-8">
+                            <div class="text-center pie-chart-card p-4 rounded-lg bg-gray-200">
+                                <h4 class="text-xl font-semibold mb-4 pie-card-title">Por Planta de Origen</h4>
+                                <div class="flex justify-center items-center gap-6">
+                                    <div class="pie-chart" style="--p:61.0; --c1: var(--teal-green); --c2: var(--lime-green);"></div>
+                                    <div class="text-left">
+                                        <div class="flex items-center mb-2"><span class="w-4 h-4 rounded-sm mr-3" style="background-color: var(--teal-green);"></span><div><p class="font-bold">Barranca</p><p class="text-sm text-gray-600">61.0% (11,363 Ton)</p></div></div>
+                                        <div class="flex items-center"><span class="w-4 h-4 rounded-sm mr-3" style="background-color: var(--lime-green);"></span><div><p class="font-bold">Reficar</p><p class="text-sm text-gray-600">39.0% (7,251 Ton)</p></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center pie-chart-card p-4 rounded-lg bg-gray-200">
+                                <h4 class="text-xl font-semibold mb-4 pie-card-title">Por Tipo de Precio</h4>
+                                <div class="flex justify-center items-center gap-6">
+                                    <div class="pie-chart" style="--p:64.4; --c1: var(--medium-blue); --c2: var(--light-lime);"></div>
+                                    <div class="text-left">
+                                        <div class="flex items-center mb-2"><span class="w-4 h-4 rounded-sm mr-3" style="background-color: var(--medium-blue);"></span><div><p class="font-bold">Contrato</p><p class="text-sm text-gray-600">64.4% (11,980 Ton)</p></div></div>
+                                        <div class="flex items-center"><span class="w-4 h-4 rounded-sm mr-3" style="background-color: var(--light-lime);"></span><div><p class="font-bold">Exportación</p><p class="text-sm text-gray-600">35.6% (6,634 Ton)</p></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusiones -->
+        <section class="p-8 rounded-xl shadow-2xl" style="background-color: var(--very-dark-blue); color: #fff;">
+            <h2 class="text-3xl font-bold text-center mb-6">Conclusiones Comparativas: 2024 vs. 2025</h2>
+            <ul class="space-y-4 list-inside max-w-4xl mx-auto">
+                <li class="flex items-start p-4 rounded-lg conclusion-item"><svg class="w-6 h-6 mr-4 mt-1 flex-shrink-0" style="color: var(--medium-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="font-semibold">Cambio Estratégico en Suministro:</strong> En 2025 se observa un cambio significativo en la estrategia de compra. La dependencia del azufre por contrato se redujo del <span class="highlight-stat">~90%</span> en 2024 al <span class="highlight-stat">~64%</span>, aumentando la participación de la exportación del 10% al 36%.</span></li>
+                <li class="flex items-start p-4 rounded-lg conclusion-item"><svg class="w-6 h-6 mr-4 mt-1 flex-shrink-0" style="color: var(--medium-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="font-semibold">Explosión de Precios de Contrato:</strong> El precio ponderado de contrato casi se duplicó, pasando de <span class="highlight-stat">$492/KG</span> en 2024 a <span class="highlight-stat">$952/KG</span> en 2025. En paralelo, se incrementó el uso de la alternativa de exportación, cuyo precio también aumentó pero de forma más moderada.</span></li>
+                <li class="flex items-start p-4 rounded-lg conclusion-item"><svg class="w-6 h-6 mr-4 mt-1 flex-shrink-0" style="color: var(--medium-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="font-semibold">Rebalanceo de Origen:</strong> La participación de Barranca como planta de origen disminuyó del 69% al 61%, mientras que Reficar (incluyendo su volumen de exportación) aumentó su participación del 31% al 39% en 2025.</span></li>
+                 <li class="flex items-start p-4 rounded-lg conclusion-item"><svg class="w-6 h-6 mr-4 mt-1 flex-shrink-0" style="color: var(--medium-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="font-semibold">Volumen Mensual al Alza:</strong> A pesar del aumento de precios, el volumen de compra promedio mensual fue ligeramente superior en 2025 (<span class="highlight-stat">2,327 Ton/Mes</span>) en comparación con 2024 (<span class="highlight-stat">2,168 Ton/Mes</span>), impulsado por mayores compras de exportación.</span></li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DATOS FUENTE ACTUALIZADOS ---
+            const volumeData = {
+                labels: ["Ene-24", "Feb-24", "Mar-24", "Abr-24", "May-24", "Jun-24", "Jul-24", "Ago-24", "Sep-24", "Oct-24", "Nov-24", "Dic-24", "Ene-25", "Feb-25", "Mar-25", "Abr-25", "May-25", "Jun-25", "Jul-25", "Ago-25"],
+                c1: [1735, 1530, 1389, 1456, 1552, 1268, 1688, 1799, 1494, 1365, 1259, 1365, 1499, 1084, 887, 1528, 1546, 1579, 1630, 1610], // Contrato Barranca
+                c2: [591, 337, 1133, 1133, 758, 204, 882, 390, 937, 623, 203, 211, 209, 202, 206, 0, 0, 0, 0, 0],       // Contrato Reficar
+                c3: [0, 0, 0, 0, 478, 0, 205, 576, 407, 741, 0, 688, 1169, 835, 997, 610, 615, 586, 1522, 800]       // Exportación
+            };
+            const priceData = {
+                contrato: [437, 410, 415, 435, 437, 430, 439, 481, 588, 588, 619, 619, 775, 772, 772, 962, 1098, 1127, 1038, 994],
+                exportacion: [0, 0, 0, 0, 170, 170, 185, 185, 220, 220, 220, 295, 300, 300, 300, 350, 350, 470, 470, 520],
+                promedio: []
+            };
+
+            // Calcular precio promedio ponderado
+            for (let i = 0; i < volumeData.labels.length; i++) {
+                const contratoVolume = volumeData.c1[i] + volumeData.c2[i];
+                const exportVolume = volumeData.c3[i];
+                const totalVolume = contratoVolume + exportVolume;
+                if (totalVolume === 0) {
+                    priceData.promedio.push(0);
+                    continue;
+                }
+                const contratoPrice = priceData.contrato[i];
+                const exportPrice = priceData.exportacion[i];
+                const weightedPrice = ((contratoPrice * contratoVolume) + (exportPrice * exportVolume)) / totalVolume;
+                priceData.promedio.push(Math.round(weightedPrice));
+            }
+            
+            // --- GRÁFICO DE VOLUMEN ---
+            const yMaxVolume = 4000;
+            const volumeBarsContainer = document.getElementById('volume-bars-container');
+            volumeData.labels.forEach((label, i) => {
+                const c1 = volumeData.c1[i];
+                const c2 = volumeData.c2[i];
+                const c3 = volumeData.c3[i];
+                const total = c1 + c2 + c3;
+                
+                const totalHeight = (total / yMaxVolume) * 100;
+                const c1Height = total > 0 ? (c1 / total) * 100 : 0;
+                const c2Height = total > 0 ? (c2 / total) * 100 : 0;
+                const c3Height = total > 0 ? (c3 / total) * 100 : 0;
+
+                const barHtml = `
+                    <div class="flex-1 h-full text-center flex flex-col justify-end items-center chart-item" 
+                         data-month="${label}" data-total="${total}" data-c1="${c1}" data-c2="${c2}" data-c3="${c3}">
+                        <div class="w-3/5" style="height: ${totalHeight}%;">
+                            <div class="chart-bar-stack" style="background-color: var(--light-lime); height: ${c3Height}%;"></div>
+                            <div class="chart-bar-stack" style="background-color: var(--green); height: ${c2Height}%;"></div>
+                            <div class="chart-bar-stack" style="background-color: var(--teal-green); height: ${c1Height}%;"></div>
+                        </div>
+                        <span class="text-xs font-semibold mt-2">${(i % 12) + 1}</span>
+                    </div>
+                `;
+                volumeBarsContainer.innerHTML += barHtml;
+            });
+
+            // --- GRÁFICO DE PRECIOS ---
+            const svg = document.getElementById('price-chart-svg');
+            const chartContent = document.getElementById('price-chart-content');
+            const labelsContainer = document.getElementById('price-chart-labels');
+            const yMaxPrice = 1200;
+
+            const createPath = (points) => {
+                if (points.length < 2) return "";
+                let d = `M ${points[0][0]} ${points[0][1]}`;
+                for (let i = 1; i < points.length; i++) {
+                    d += ` L ${points[i][0]} ${points[i][1]}`;
+                }
+                return d;
+            };
+            
+            const drawPriceChart = () => {
+                if (!svg || !chartContent || !labelsContainer) return;
+                chartContent.innerHTML = ''; 
+                labelsContainer.innerHTML = '';
+                const width = svg.clientWidth;
+                const height = svg.clientHeight;
+                if (width === 0) return;
+                
+                const xStep = width / (volumeData.labels.length - 1);
+                const getCoords = (data) => data.map((value, i) => value === null ? null : [i * xStep, height - (value / yMaxPrice * height)]).filter(p => p !== null);
+
+                const contratoCoords = getCoords(priceData.contrato);
+                const exportCoords = getCoords(priceData.exportacion.map(p => p === 0 ? null : p));
+                const promedioCoords = getCoords(priceData.promedio);
+
+                let content = `
+                    <path d="${createPath(contratoCoords)}" fill="none" stroke="var(--dark-blue)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="${createPath(exportCoords)}" fill="none" stroke="var(--medium-green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="${createPath(promedioCoords)}" fill="none" stroke="var(--teal-blue)" stroke-width="3" stroke-dasharray="5,5" stroke-linecap="round" stroke-linejoin="round"/>
+                `;
+
+                contratoCoords.forEach((point, i) => {
+                     content += `<circle class="price-line-chart-point" data-month="${volumeData.labels[i]}" data-price-type="Contrato" data-price="$${priceData.contrato[i]}" cx="${point[0]}" cy="${point[1]}" r="5" fill="var(--dark-blue)" stroke="white" stroke-width="2"/>`;
+                });
+                
+                exportCoords.forEach((point, i) => {
+                    // Find original index
+                    const originalIndex = priceData.exportacion.indexOf(priceData.exportacion.filter(p => p > 0)[i]);
+                    content += `<circle class="price-line-chart-point" data-month="${volumeData.labels[originalIndex]}" data-price-type="Exportación" data-price="$${priceData.exportacion[originalIndex]}" cx="${point[0]}" cy="${point[1]}" r="5" fill="var(--medium-green)" stroke="white" stroke-width="2"/>`;
+                });
+
+                promedioCoords.forEach((point, i) => {
+                    content += `<circle class="price-line-chart-point" data-month="${volumeData.labels[i]}" data-price-type="Promedio Ponderado" data-price="$${priceData.promedio[i]}" cx="${point[0]}" cy="${point[1]}" r="5" fill="var(--teal-blue)" stroke="white" stroke-width="2"/>`;
+                });
+
+
+                chartContent.innerHTML = content;
+
+                labelsContainer.innerHTML = '';
+                volumeData.labels.forEach((label, i) => {
+                    labelsContainer.innerHTML += `<span class="flex-1 text-center text-xs font-semibold">${(i % 12) + 1}</span>`;
+                });
+                addTooltipEventListeners();
+            };
+            
+            // --- LÓGICA DE TOOLTIPS ---
+            function addTooltipEventListeners() {
+                const items = document.querySelectorAll('.chart-item, .price-line-chart-point');
+                const tooltip = document.getElementById('chart-tooltip');
+                if (!items.length || !tooltip) return;
+
+                items.forEach(item => {
+                    item.addEventListener('mousemove', (e) => {
+                        const month = item.dataset.month;
+                        let tooltipHtml = `<div class="font-bold text-base mb-2 text-center">${month}</div>`;
+
+                        if (item.classList.contains('chart-item')) { // Tooltip para gráfico de volumen
+                            const total = parseInt(item.dataset.total).toLocaleString('es-CO');
+                            const c1 = parseInt(item.dataset.c1).toLocaleString('es-CO');
+                            const c2 = parseInt(item.dataset.c2).toLocaleString('es-CO');
+                            const c3 = parseInt(item.dataset.c3).toLocaleString('es-CO');
+                            tooltipHtml += `<div class="text-sm mb-1"><span class="inline-block w-3 h-3 rounded-sm mr-2" style="background-color: var(--teal-green);"></span>C. Barranca: ${c1} Ton</div>`;
+                            if(parseInt(item.dataset.c2) > 0) tooltipHtml += `<div class="text-sm mb-1"><span class="inline-block w-3 h-3 rounded-sm mr-2" style="background-color: var(--green);"></span>C. Reficar: ${c2} Ton</div>`;
+                            if(parseInt(item.dataset.c3) > 0) tooltipHtml += `<div class="text-sm"><span class="inline-block w-3 h-3 rounded-sm mr-2" style="background-color: var(--light-lime);"></span>Exportación: ${c3} Ton</div>`;
+                            tooltipHtml += `<hr class="my-2 border-gray-500"><div class="text-sm font-bold">Total: ${total} Ton</div>`;
+                        } else { // Tooltip para gráfico de precios
+                            tooltipHtml += `<div class="text-sm">${item.dataset.priceType}: ${item.dataset.price}</div>`;
+                        }
+
+                        tooltip.innerHTML = tooltipHtml;
+                        tooltip.style.opacity = '1';
+                        tooltip.style.left = `${e.pageX}px`;
+                        tooltip.style.top = `${e.pageY}px`;
+                    });
+
+                    item.addEventListener('mouseleave', () => {
+                        tooltip.style.opacity = '0';
+                    });
+                });
+            }
+
+            // Inicializar gráficos
+            drawPriceChart();
+            window.addEventListener('resize', drawPriceChart);
+            addTooltipEventListeners();
+        });
+    </script>
+</body>
+</html>
